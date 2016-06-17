@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import minesweeper.Minesweeper;
 import minesweeper.UserInterface;
 import minesweeper.core.Clue;
 import minesweeper.core.Field;
@@ -97,6 +98,7 @@ public class ConsoleUI implements UserInterface {
 		}
 		System.out.println("------------------------------------------");
 		System.out.println("Poèet neoznaèených mín je: " + field.getRemainingMineCount());
+		System.out.println("Aktuálny èas hrania hry je: " + Minesweeper.getInstance().getPlayingSeconds() + " sekúnd");
 		System.out.println();
 	}
 

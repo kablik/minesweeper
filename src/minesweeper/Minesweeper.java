@@ -16,13 +16,27 @@ public class Minesweeper {
 		long pocetSekund = casHrania / 1000;
 		return (int) pocetSekund;
 	}
-    /** User interface. */
+	
+	static private Minesweeper instance;
+	
+	public static Minesweeper getInstance(){
+		return instance;
+	}
+	
+	BestTimes bestTimes = new BestTimes();
+
+    public BestTimes getBestTimes() {
+		return bestTimes;
+	}
+
+	/** User interface. */
     private UserInterface userInterface;
  
     /**
      * Constructor.
      */
     private Minesweeper() {
+    	instance = this;
         userInterface = new ConsoleUI();
         
         Field field = new Field(9, 9, 10);
